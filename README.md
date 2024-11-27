@@ -1,0 +1,3 @@
+# The wild oasis
+
+Main project that have tailwind, contextApi, react query, react-router, compound components, reusable ui components, reusable custom hooks, Dark mode and more...
