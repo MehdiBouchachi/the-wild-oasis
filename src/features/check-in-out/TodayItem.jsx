@@ -27,14 +27,15 @@ const Guest = styled.div`
 
 function TodayItem({ activity }) {
   const { id, status, guests, numNights } = activity;
+  console.log(guests);
 
   return (
     <StyledTodayItem>
       {status === "unconfirmed" && <Tag type="green">Arriving</Tag>}
       {status === "checked-in" && <Tag type="blue">Departing</Tag>}
 
-      <Flag src={guests.countryFlag} alt={`Flag of ${guests.country}`} />
-      <Guest>{guests.fullName}</Guest>
+      <Flag src={guests?.countryFlag} alt={`Flag of ${guests?.country}`} />
+      <Guest>{guests?.fullName}</Guest>
       <div>{numNights} nights</div>
 
       {status === "unconfirmed" && (
