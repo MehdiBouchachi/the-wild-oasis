@@ -32,6 +32,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         <GlobalStyles />
+
         <BrowserRouter>
           <Routes>
             <Route
@@ -41,10 +42,14 @@ function App() {
                 </ProtectedRoute>
               }
             >
-              <Route index element={<Navigate replace to="dashboard" />} />
-              <Route path="dashboard" element={<Dashboard />} />
+              <Route index element={<Navigate replace to="bookings" />} />
+
+              <Route path="homepage" element={<Dashboard />} />
+
               <Route path="bookings" element={<Bookings />} />
+
               <Route path="bookings/:bookingId" element={<Booking />} />
+
               <Route path="checkin/:bookingId" element={<Checkin />} />
               <Route path="cabins" element={<Cabins />} />
               <Route path="users" element={<Users />} />
@@ -52,6 +57,7 @@ function App() {
 
               <Route path="account" element={<Account />} />
             </Route>
+
             <Route path="login" element={<Login />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>

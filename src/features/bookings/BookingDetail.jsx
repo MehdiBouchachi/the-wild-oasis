@@ -41,7 +41,6 @@ function BookingDetail() {
     "checked-in": "green",
     "checked-out": "silver",
   };
-
   if (isLoading) return <Spinner />;
   if (!booking) return <Empty resourceName={"booking"} />;
   return (
@@ -57,6 +56,7 @@ function BookingDetail() {
       </Row>
 
       <BookingDataBox booking={booking} />
+
       <ButtonGroup>
         {booking.status === "unconfirmed" && (
           // The button will be shown only in the unconfirmed booking
@@ -65,6 +65,17 @@ function BookingDetail() {
             Check in
           </Button>
         )}
+
+        {booking.status === "checked-in" && (
+          <Button
+            icon={<HiArrowUpOnSquare />}
+            onClick={() => checkout(booking.id)}
+            disabled={isCheckingOut}
+          >
+            Check out
+          </Button>
+        )}
+
 
         {booking.status === "checked-in" && (
           // The button will be shown only in the checked out booking
@@ -76,6 +87,8 @@ function BookingDetail() {
             Check out
           </Button>
         )}
+
+        
         <Modal>
           <Modal.Open opens={"delete"}>
             <Button variation="danger" disabled={isDeleting}>

@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 
 export function useBooking() {
   const { bookingId } = useParams();
+
+  console.log(bookingId);
   const {
     data: booking,
     isLoading,

@@ -8,6 +8,7 @@ export function useBookings() {
   const [searchParams] = useSearchParams();
   // Filter
   const filterdValue = searchParams.get("status");
+  
   const filter =
     !filterdValue || filterdValue === "all"
       ? null
