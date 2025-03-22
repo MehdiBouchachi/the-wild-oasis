@@ -1,27 +1,76 @@
+## How to Contribute
 
+Follow these steps:
 
-# Project Overview
-This project is a modern React application designed with a focus on reusability, scalability, and maintainability. It leverages cutting-edge tools and patterns to deliver a robust user experience.
+1. **Clone the Repository**
+   First, clone the repository to your local machine and navigate to the project folder using the following commands:
 
-# Features and Highlights
-Tailwind CSS: Streamlined styling with a utility-first CSS framework.
+   ```bash
+   git clone https://github.com/MehdiBouchachi/dantcare-web.git
+   cd dantcare-web
+   ```
 
-Context API: Simplified global state management.
+2. **Create a New Branch**
+   Always work on a separate branch for new features or bug fixes:
 
-React Query: Efficient data fetching and server state management.
+   ```bash
+   git checkout -b feature/new-feature-name
+   ```
 
-React Router: Dynamic and intuitive client-side routing.
+3. **Make Your Changes**
+   Implement your changes and make sure to test them locally.
 
-Compound Components: Flexible component architecture for greater control and customization.
+4. **Commit Your Changes**
+   Once you’re done, commit your changes with a meaningful message:
 
-Reusable UI Components: Modular components for consistent design and efficient development.
+   ```bash
+   git add .
+   git commit -m "New feature added"
+   ```
 
-Custom Hooks: Abstracted logic for cleaner, reusable code.
+5. **Pull the Latest Changes**
+   Pull the latest changes from the main branch to avoid conflicts:
 
-Dark Mode: Built-in theme switcher for light and dark modes.
+   ```bash
+   git checkout master
+   git pull origin master
+   git checkout feature/new-feature-name
+   git rebase master
+   ```
 
-Scalable Design: Structured to support future growth and feature enhancements.
+   Rebasing rewrites your branch history to incorporate the latest changes from main without creating merge commits. If there are conflicts, Git will pause the rebase and prompt you to resolve them.
 
-Modern React Practices: Utilizes the latest React features and best practices.
+   After resolving any conflicts, continue the rebase:
 
-This project serves as a foundation for building dynamic, responsive, and maintainable web applications.
+   ```bash
+   git rebase --continue
+   ```
+
+6. **Push to Your Branch**
+   Push your changes to your feature branch:
+
+   ```bash
+   git push origin feature/new-feature-name
+   ```
+
+7. **Create a Pull Request**
+   In Github open a Pull Request (PR) from your branch to the main branch. Be sure to include a description of your changes and link any related issues.
+
+8. **Wait for Review**
+   After submitting the PR, your code will be reviewed. Address any feedback, if necessary, and push changes to the same branch.
+
+9. **Merge After Approval**
+   Once the PR is approved, merge it into main branche using Github or by these commandes:
+
+   ```bash
+   git checkout master
+   git merge feature/new-feature-name
+   ```
+
+10. **Clean Up**
+    After merging, delete the feature branch locally and remotely:
+
+    ```bash
+    git branch -d feature/new-feature-name
+    git push origin --delete feature/new-feature-name
+    ```
